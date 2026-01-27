@@ -1,18 +1,20 @@
 <?php
 
 //Task 1
-echo Dividir(10, 0);
+try{
+    $result = Dividir(10, 0);
+    echo $result;
+}
+catch(Exception $e){
+    echo $e->getMessage();
+}
 function Dividir($a, $b)
 {
-    try {
-        if ($b == 0) {
-            throw new Exception("No es pot dividir per 0" . "\n");
-        }
+        if ($b == 0) throw new Exception("No es pot dividir per 0" . "\n");
         return $a / $b;
-    } catch (Exception $e) {
-        return "Error: " . $e->getMessage();
-    }
-
 }
+
+
+
 
 ?>
